@@ -1,31 +1,65 @@
-# Portfolio: Ashwin Joseph Manthara
+# Ashwin Joseph Manthara · Portfolio & Build Log
 
-A plain HTML/CSS/JS site with no build step. Double-click `index.html` to open it.
+**Live site → [ashwin-jm.github.io](https://ashwin-jm.github.io)**
 
-## Pages
-- `index.html`: home page with the projects section, latest posts and contact
-- `about.html`: about, experience, toolkit and principles
-- `blog.html`: all Medium posts (title and cover image; each card opens Medium)
+My personal portfolio and learning journal as a Data Engineer. It shows the projects I've shipped, what I'm building right now, and the articles I write along the way.
 
-## Updating content (no HTML editing needed)
-| What | File |
+![Portfolio home page](assets/img/preview.png)
+
+## What's on the site
+
+| Page | What it shows |
 |---|---|
-| Name, email, LinkedIn, GitHub, **Medium handle**, photo, résumé | `assets/js/config.js` |
-| Projects (add, remove or reorder; add `repo`, `metrics`, `posts`, `featured`) | `assets/js/projects.js` |
-| "Currently building" card (project, milestones, what you're learning) | `now` in `assets/js/config.js` |
-| Styling (colours, fonts) | `assets/css/style.css` (the `:root` variables at the top) |
+| **Work** (`index.html`) | Intro, a live *Currently building* card with milestone progress, selected projects with data-flow diagrams, and the latest posts |
+| **About** (`about.html`) | Background, experience timeline, toolkit, certifications and how I work |
+| **Writing** (`blog.html`) | My Medium articles, loaded automatically and filterable by topic |
 
-### Blog
-Set `mediumHandle` in `config.js` (without the `@`). The blog pulls your latest posts from Medium's RSS feed through the free rss2json.com service. New Medium posts show up on the site automatically. If the feed can't be reached, the site shows the posts in `manualPosts` instead.
+## Features
 
-### Photo / résumé
-Put `ashwin.jpg` or `resume.pdf` inside `assets/`, then set `photo: "assets/img/ashwin.jpg"` or `resume: "assets/resume.pdf"` in `config.js`.
+- **Articles load automatically.** Posts come from my Medium RSS feed, so publishing on Medium updates the site with no redeploy.
+- **Content lives in data files.** Profile details, projects and the *Currently building* card are all in plain JavaScript files, so the HTML never needs editing.
+- **Project cards show how things work.** Each project has a data-flow diagram, a list of what I built, the tech stack, and optional metrics, repo link and write-ups.
+- **Topic filters.** Medium tags become filter chips on the Writing page.
+- **Responsive and accessible.** Works on phones, uses semantic HTML, and respects reduced-motion settings.
+- **No build step or dependencies.** Plain HTML, CSS and JavaScript, hosted free on GitHub Pages.
 
-## Deploying (free)
-- **GitHub Pages:** push this folder to a repo named `<username>.github.io` → Settings → Pages → deploy from `main`.
-- **Vercel / Netlify:** drag and drop this folder, or import the repo. No build command is needed.
+## Tech stack
 
-## Weekly routine (keeps the site alive)
-1. Update `now.milestones` in `config.js` (`next` → `active` → `done`) and change `now.updated`.
-2. Publish on Medium with 3–5 tags. The tags become filter chips on the Writing page.
-3. When a project ships, move it from `now` into `projects.js`. Add `repo`, `metrics` (real numbers) and links to your write-ups in `posts`, and set `featured: true` for your best 2–3.
+- **Frontend:** HTML5, CSS3 (custom properties, grid), vanilla JavaScript
+- **Content:** Medium RSS via [rss2json](https://rss2json.com)
+- **Fonts:** Fraunces, Inter and JetBrains Mono (Google Fonts)
+- **Hosting:** GitHub Pages
+
+## Project structure
+
+```
+├── index.html              # Work / home
+├── about.html              # About
+├── blog.html               # Writing
+└── assets/
+    ├── css/style.css       # Design tokens + all styles
+    ├── js/config.js        # Profile, links, "Currently building" data
+    ├── js/projects.js      # Projects data
+    ├── js/main.js          # Rendering: projects, Medium feed, filters, now-card
+    └── img/                # Photo, social preview, favicon
+```
+
+## Run locally
+
+```bash
+git clone https://github.com/ashwin-jm/ashwin-jm.github.io.git
+cd ashwin-jm.github.io
+python -m http.server 8000     # then open http://localhost:8000
+```
+
+(You can also just open `index.html` in a browser.)
+
+## Contact
+
+- LinkedIn: [linkedin.com/in/ashwin-jm](https://www.linkedin.com/in/ashwin-jm/)
+- Medium: [medium.com/@ashwinjm](https://medium.com/@ashwinjm)
+- Email: ashwinjm25@gmail.com
+
+---
+
+© Ashwin Joseph Manthara. The code is free to learn from. Please don't reuse the personal content (text, photo, résumé).

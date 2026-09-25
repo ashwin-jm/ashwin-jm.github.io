@@ -1,0 +1,86 @@
+[
+  {
+    "title": "Unlocking Microsoft Fabric: Your All-in-One Data Analytics Platform",
+    "link": "https://medium.com/@ashwinjm/unlocking-microsoft-fabric-your-all-in-one-data-analytics-platform-d4b7520a33c6",
+    "date": "2026-09-25 06:02:26",
+    "image": "https://cdn-images-1.medium.com/max/1024/1*mzOKVL7m0aNJII8kseHOYg.png",
+    "tags": [
+      "microsoft-fabric",
+      "data-pipeline",
+      "microsoft",
+      "azure",
+      "data-engineering"
+    ]
+  },
+  {
+    "title": "Getting Started with Pandas: A Beginner-Friendly Guide",
+    "link": "https://medium.com/@ashwinjm/getting-started-with-pandas-a-beginner-friendly-guide-ba6dece48407",
+    "date": "2025-12-26 13:20:33",
+    "image": "https://cdn-images-1.medium.com/max/1024/1*d5Pzr-OgN1rlJSpj-MHHbQ.png",
+    "tags": [
+      "pandas",
+      "data-engineering",
+      "python",
+      "data-science",
+      "data"
+    ]
+  },
+  {
+    "title": "Find the \"second largest\" in SQL",
+    "link": "https://medium.com/@ashwinjm/find-the-second-largest-in-sql-e6cd25702ef7",
+    "date": "2025-10-12 13:18:11",
+    "image": "https://cdn-images-1.medium.com/max/626/1*b0toFMQl0mhdrmBbtI_iBQ.jpeg",
+    "tags": []
+  },
+  {
+    "title": "Understand How Web Scraping = Pizza Ordering",
+    "link": "https://medium.com/@ashwinjm/understand-how-web-scraping-pizza-ordering-fa122317bc8b",
+    "date": "2025-04-21 11:47:47",
+    "image": "https://cdn-images-1.medium.com/max/1024/1*ioWc3UMrqLQFNTK1WbQnyg.png",
+    "tags": [
+      "website-scraping",
+      "pizza-ordering-system",
+      "web-scraping",
+      "data"
+    ]
+  },
+  {
+    "title": "What are Layers in AWS Lambda and How Can We Create It?",
+    "link": "https://medium.com/@ashwinjm/what-are-layers-in-aws-lambda-and-how-can-we-create-it-e766eb324a9a",
+    "date": "2024-11-01 14:00:38",
+    "image": "https://cdn-images-1.medium.com/max/735/1*RneSNWEkM4v4z8f3fwKeJg.jpeg",
+    "tags": [
+      "cloud-computing",
+      "aws",
+      "cloud",
+      "learning",
+      "aws-lambda"
+    ]
+  },
+  {
+    "title": "Best Resources for AWS Cloud Practitioner Certification: A Beginner's Guide to Passing",
+    "link": "https://medium.com/@ashwinjm/best-resources-for-aws-cloud-practitioner-certification-a-beginners-guide-to-passing-36d8042e659c",
+    "date": "2024-10-29 12:23:12",
+    "image": "https://cdn-images-1.medium.com/max/736/1*kwZFqH9N425FTxrLPoKM-A.jpeg",
+    "tags": [
+      "cloud-computing",
+      "cloud-practitioner",
+      "aws",
+      "aws-certification",
+      "self-learning"
+    ]
+  },
+  {
+    "title": "A Guide for Beginners: Host a Static Website on Amazon S3",
+    "link": "https://medium.com/@ashwinjm/a-guide-for-beginners-host-a-static-website-on-amazon-s3-913064b31b35",
+    "date": "2024-10-24 16:35:21",
+    "image": "https://cdn-images-1.medium.com/max/1024/1*6atIFYqV7vnPMZXS2EnImA.jpeg",
+    "tags": [
+      "website",
+      "aws-project",
+      "aws",
+      "self-learning",
+      "s3"
+    ]
+  }
+]

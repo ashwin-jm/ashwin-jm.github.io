@@ -132,23 +132,35 @@
     const limit = parseInt(grid.dataset.limit || "0", 10);
     grid.innerHTML = Array.from({ length: limit || 6 }, () => `<div class="post skeleton"><div class="post-cover"></div><div class="post-text"><span></span><span></span></div></div>`).join("");
 
-    let posts = [];
-    if (S.mediumHandle) {
-      try {
-        const feed = encodeURIComponent(`https://medium.com/feed/@${S.mediumHandle.replace(/^@/, "")}`);
-        const res = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${feed}`);
-        const data = await res.json();
-        if (data.status === "ok") {
-          posts = data.items.map((it) => ({
-            title: it.title,
-            link: it.link,
-            date: it.pubDate,
-            image: it.thumbnail || firstImage(it.content || it.description),
-            tags: it.categories || []
-          }));
-        }
-      } catch (e) { /* fall through to manual posts */ }
+    // 1) posts.json — kept fresh by the "Sync Medium posts" GitHub Action (same origin, no third party)
+    // 2) rss2json — live fallback, catches anything newer than the last sync
+    // 3) manualPosts in config.js — last resort
+    const handle = (S.mediumHandle || "").replace(/^@/, "");
+    const fromJson = fetch(`assets/data/posts.json?v=${Date.now()}`, { cache: "no-store" })
+      .then((r) => (r.ok ? r.json() : []))
+      .catch(() => []);
+    const fromRss = !handle ? Promise.resolve([]) :
+      fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(`https://medium.com/feed/@${handle}`)}`)
+        .then((r) => r.json())
+        .then((data) => (data.status === "ok" ? data.items.map((it) => ({
+          title: it.title,
+          link: it.link,
+          date: it.pubDate,
+          image: it.thumbnail || firstImage(it.content || it.description),
+          tags: it.categories || []
+        })) : []))
+        .catch(() => []);
+
+    const merged = new Map();
+    for (const list of await Promise.all([fromJson, fromRss])) {
+      for (const p of Array.isArray(list) ? list : []) {
+        const key = String(p.link || "").split("?")[0];
+        if (!key) continue;
+        const prev = merged.get(key);
+        merged.set(key, { ...p, ...prev, link: key, image: (prev && prev.image) || p.image, tags: (prev && prev.tags && prev.tags.length ? prev.tags : p.tags) || [] });
+      }
     }
+    let posts = [...merged.values()].sort((a, b) => toTime(b.date) - toTime(a.date));
     if (!posts.length) posts = (S.manualPosts || []).slice();
     if (limit) posts = posts.slice(0, limit);
 
@@ -195,6 +207,10 @@
     observeReveals();
   }
 
+  function toTime(d) {
+    const t = new Date(String(d || "").replace(" ", "T") + (/Z|[+-]\d\d:?\d\d$/.test(String(d)) ? "" : "Z")).getTime();
+    return isNaN(t) ? 0 : t;
+  }
   function firstImage(html) {
     const m = /<img[^>]+src="([^"]+)"/i.exec(html || "");
     return m ? m[1] : "";

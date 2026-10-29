@@ -1,5 +1,18 @@
 [
   {
+    "title": "Connecting a Local SQL Server to Microsoft Fabric with the On-Premises Data Gateway",
+    "link": "https://medium.com/@ashwinjm/connecting-a-local-sql-server-to-microsoft-fabric-with-the-on-premises-data-gateway-f9b530b1f1d2",
+    "date": "2026-10-29 09:12:35",
+    "image": "https://cdn-images-1.medium.com/max/1024/1*XIqQ6PDqAA4UFNiVySwTjw.png",
+    "tags": [
+      "microsoft",
+      "data-engineering",
+      "microsoft-fabric",
+      "sql",
+      "data-science"
+    ]
+  },
+  {
     "title": "Unlocking Microsoft Fabric: Your All-in-One Data Analytics Platform",
     "link": "https://medium.com/@ashwinjm/unlocking-microsoft-fabric-your-all-in-one-data-analytics-platform-d4b7520a33c6",
     "date": "2026-09-25 06:02:26",

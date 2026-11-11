@@ -1,5 +1,18 @@
 [
   {
+    "title": "How Spark Actually Runs Your Code: Driver, Executors, Jobs, Stages and Tasks",
+    "link": "https://medium.com/@ashwinjm/how-spark-actually-runs-your-code-driver-executors-jobs-stages-and-tasks-020be7ba55c7",
+    "date": "2026-11-11 06:06:15",
+    "image": "https://cdn-images-1.medium.com/max/1024/1*U8_p3Abg74Bfkc5whyeJRA.png",
+    "tags": [
+      "data-science",
+      "pyspark",
+      "spark",
+      "data-engineering",
+      "freelancing"
+    ]
+  },
+  {
     "title": "Connecting a Local SQL Server to Microsoft Fabric with the On-Premises Data Gateway",
     "link": "https://medium.com/@ashwinjm/connecting-a-local-sql-server-to-microsoft-fabric-with-the-on-premises-data-gateway-f9b530b1f1d2",
     "date": "2026-10-29 09:12:35",
